@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Metatag X-UA-Compatiblepozwala autorom stron internetowych wybrać, w jakiej wersji Internet Explorera ma być renderowana strona. W zależności od obsługiwanych przeglądarek firmy Microsoft dalsze korzystanie z X-UA-Compatibletagu może nie być konieczne. Jeśli potrzebujesz obsługi IE9 lub IE8, polecam użycie tagu. -->
+    <!-- Metatag X-UA-Compatible pozwala autorom stron internetowych wybrać, 
+        w jakiej wersji Internet Explorera ma być renderowana strona. 
+        W zależności od obsługiwanych przeglądarek firmy Microsoft dalsze korzystanie z X-UA-Compatibletagu może nie być konieczne.
+        Jeśli potrzebujesz obsługi IE9 lub IE8, polecam użycie tagu. -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Tytuł strony -->
@@ -12,7 +15,7 @@
 
     <!-- Link do stylów resetowania styli
         Każdy interpreter (np. przeglądarka internetowa) posiada swoje domyślne style,
-        np. domyślne marginesy. W celu zresetowania doyślnych styli można użyć gotowych .css.
+        np. domyślne marginesy. W celu zresetowania domyślnych styli można użyć gotowych .css.
         Przykłady:
         https://www.youtube.com/watch?v=5e0wuvhxLk4
         https://css-tricks.com/an-interview-with-elad-shechter-on-the-new-css-reset/#top-of-site
@@ -24,14 +27,30 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Link do stylów zewnętrznych bibliotek, np. fontów
-    Nie jest to konieczne dla każdego z projektów i może być dobierane dowolnie
-    - dokumentacja https://www.angularjswiki.com/fontawesome/cdn/
-    - linki do blibliotek https://cdnjs.com/libraries/font-awesome
-    Można umieścić również @import w style.css. Natomiast najpierw ładowany jest index.html a dopiero później style.css, więc w przypadku niedostępności style.css style się rozjadą -->
+        Nie jest to konieczne dla każdego z projektów i może być dobierane dowolnie
+        - dokumentacja https://www.angularjswiki.com/fontawesome/cdn/
+        - linki do blibliotek https://cdnjs.com/libraries/font-awesome
+        Można umieścić również @import w style.css. Natomiast najpierw ładowany jest index.html a dopiero później style.css, więc w przypadku niedostępności style.css style się rozjadą -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body></body>
+  <body>
+    <!-- Klasa "opakowania" -->
+    <div class="wrapper">
+      <!-- Klasa nawigacji -->
+      <nav class="nav">
+        <!-- INPUT stosuje się w obrębie formularzy. 
+            Znacznik ten tworzy zarówno jednowierszowe pola tekstowe, pola opcji (checkbox) i pola przełączników (radio button), jak i kasuje zawartości wszystkich pól oraz wydaje polecenie wysłania treści formularza do serwera.
+            Jego konkretną funkcję określa się parametrem TYPE.
+
+            CHECKED
+            W znaczniku INPUT z parametrem TYPE o wartości "checkbox" lub "radio" można za pomocą parametru CHECKED domyślnie uaktywnić dane pole przy wejściu do formularza.
+
+            http://fizyka.umk.pl/~jacek/docs/html32ref/input.htm#:~:text=W%20znaczniku%20INPUT%20z%20parametrem,pole%20przy%20wej%C5%9Bciu%20do%20formularza. -->
+        <input type="checkbox" id="show-menu" />
+      </nav>
+    </div>
+  </body>
 </html>
