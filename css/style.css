@@ -22,7 +22,7 @@
   display: flex; /* Pyświetlanie elastyczne. To sposób wyświetlania ustawiający elementu "w środku klasy" równomiernie i dynamicznie. Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   max-width: calc(
     100% - 200px
-  ); /* Obliczanie maksymalnej szerokości paska nawigacji. Pozwala na nierozjeżdżanie się szerokości paska, czyli w tym przypadku ustawia maksymalną szerokość elementów na całość strony - 200px; Przydatne dla szerokokątnych ekranów */
+  ); /* Obliczanie maksymalnej szerokości paska nawigacji. Pozwala na nierozjeżdżanie się szerokości paska, czyli w tym przypadku ustawia maksymalną szerokość elementów na całość strony minus 200px; Przydatne dla szerokokątnych ekranów */
   margin: 0 auto; /* Marginesy, tzn "zewnętrzne" odległości od innych obiektów (w przeciwieństwie do padding - "wewnętrzne" odległości */
   height: 70px; /* Wysokość paska nawigacji wyrażona STATYCZNIE w pixel'ach (dla każdego użądzenia zawsze będzie 70px) */
   /* height: 4.375em;*/ /*4.375em = 70px*/ /* Wysokość paska nawigacji wyrażona DYNAMICZNIE w em'ach (może być różna dla różnych urządzeń czy przeglądarek). 1em to wartość urządzenia/przeglądarki (zazwyczaj dla większości 16px) wysokości elementów, czyli PRZEWAŻNIE 1em = 16px, 1.5em = 24px, 2em = 32px. Konwerter: https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
