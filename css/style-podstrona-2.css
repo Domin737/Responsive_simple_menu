@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: beige;
+  flex-direction: column;
+  /* padding-inline: 20px; */
+}
+
+header {
+  width: 100%;
+  background: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.logo,
+nav ul li a,
+label {
+  color: aliceblue;
+}
+
+label {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  label {
+    display: block;
+  }
+
+  nav {
+    width: 200px;
+    position: absolute;
+    background: aliceblue;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  nav ul li a,
+  nav label {
+    color: black;
+  }
+
+  nav label {
+    text-align: right;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  input:checked ~ nav {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+footer {
+  background-color: #252525;
+}
