@@ -1,104 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Style dla całości stron */
-* {
-  /* Ustawia rodzaj dekoracji tekstu do użycia (np. podkreślenie (underline), nadkreślenie (overline), przekreślenie (line-through), brak dekoracji, nie zmienia wyglądu tekstu (none). */
-  text-decoration: none;
-  /* Ustawia style fontów */
+body {
   font-family: "Poppins", sans-serif;
-}
-
-/* Style dla kasy wrapper */
-.wrapper {
-  background: #252525;
-  position: fixed; /* Pozycja wrappera, która pozwala na "pływające" (sticky) poruszanie się ze stroną */
-  width: 100%;
-}
-
-/* Style dla klasy nawigacji */
-/* Taki zapis oznacza klasę .nav zawartą TYLKO w klasie .wrapper. Pozostałe klasy .nav nie będą miały dostępu do tedo stylowania */
-.wrapper .nav {
-  position: sticky; /* Pozycja paska nawigacji, która ustawia relatywnie pasek nawigacji (czyli względem klasy wyżej) */
-  display: flex; /* Wyświetlanie elastyczne. To sposób wyświetlania ustawiający elementu "w środku klasy" równomiernie i dynamicznie. Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-  max-width: calc(
-    100% - 200px
-  ); /* Obliczanie maksymalnej szerokości paska nawigacji. Pozwala na nierozjeżdżanie się szerokości paska, czyli w tym przypadku ustawia maksymalną szerokość elementów na całość strony minus 200px; Przydatne dla szerokokątnych ekranów */
-  margin: 0 auto; /* Marginesy, tzn "zewnętrzne" odległości od innych obiektów (w przeciwieństwie do padding - "wewnętrzne" odległości */
-  height: 4.375em; /* Wysokość paska nawigacji wyrażona STATYCZNIE w pixel'ach (dla każdego użądzenia zawsze będzie 70px) */
-  /* height: 70px;*/ /*4.375em = 70px*/ /* Wysokość paska nawigacji wyrażona DYNAMICZNIE w em'ach (może być różna dla różnych urządzeń czy przeglądarek). 1em to wartość urządzenia/przeglądarki (zazwyczaj dla większości 16px) wysokości elementów, czyli PRZEWAŻNIE 1em = 16px, 1.5em = 24px, 2em = 32px. Konwerter: https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
-  align-items: center; /* Parametr dla dziedziczenia parametru display:flex: ; Ustawia obiektu według osi poprzecznej (zazwyczaj, jeśli obiekt nie jest obórcony, w pionie) Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-  justify-content: space-between; /* Parametr dla dziedziczenia parametru display:flex: ; Ustawia obiektu według osi głównej (zazwyczaj, jeśli obiekt nie jest obórcony, w poziomie). Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-}
-
-/* Klasa dla logo i napisu z nazwą firmy */
-.nav .content {
-  display: flex; /* Wyświetlanie elastyczne. To sposób wyświetlania ustawiający elementu "w środku klasy" równomiernie i dynamicznie. Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-  align-items: center; /* Parametr dla dziedziczenia parametru display:flex: ; Ustawia obiektu według osi poprzecznej (zazwyczaj, jeśli obiekt nie jest obórcony, w pionie) Bardzo przydatne źródło: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-}
-
-/* Klasa dla napisu z nażwą firmy */
-/* Należy na to patrzeć w ten sposób: dla wszystkich obiektów "a" (akapit), które znajdują się w klasie ".logo", która znajduje się w kalsie ".content" */
-.content .logo a {
-  color: #fff;
-  font-size: 1.875em; /* font-size: 30px;*/ /*1.875em = 30px*/ /* Wysokość tekstu wyrażona DYNAMICZNIE w em'ach (może być różna dla różnych urządzeń czy przeglądarek). 1em to wartość urządzenia/przeglądarki (zazwyczaj dla większości 16px) wysokości elementów, czyli PRZEWAŻNIE 1em = 16px, 1.5em = 24px, 2em = 32px. Konwerter: https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
-  font-weight: 600; /* Grubość czcionki (standardowa to 400) */
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  background-color: beige;
+  flex-direction: column;
 }
 
-/* Klasa dla obrazów w pasku nawigacji */
-.nav-img {
-  margin: 0 0.3125em; /* Taki zapis oznacza margines z góry i z dołu równy 0, oraz z lewej i z prawej równy 0.3125em (5px) */
-}
-
-/* Klasa dla linków w klasie ".content", która jest w klasie ".nav" */
-.nav .content .links {
-  margin-left: 5em; /* Margines z lewej. */ /*5em = 80px*/
+header {
+  width: 100%;
+  background: #252525;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
 }
 
-/* Klasa dla pojedyńczego linka w klasie ".links", która jest w klasie ".content" */
-.content .links .link {
-  list-style: none; /* nie ma znaczników listy (tych punktorów, np. kropek) i podkreśliników */
-  line-height: 4.375em;
+.nav-a {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: aliceblue;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Klasa dla tekstu w pojedyńczym linku */
-.content .links .link a {
-  color: #fff;
-  font-size: 1.125em; /* 1.125em = 18px */
-  font-weight: 500; /* Grubość czcionki (standardowa to 400) */
-  padding: 0.5625em 1.0625em; /* padding: 9px 17px */ /* Marginesy wewnętrzne tesktów w pojedyńczym linku */
-  /* border-radius: 5px; */
-  /* transition: all 0.3s ease; */
+.logo,
+nav ul li a,
+label {
+  color: aliceblue;
 }
 
-.dummy-text {
-  /* position: absolute; */
-  display: flexbox;
+label {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  label {
+    display: block;
+  }
+
+  nav {
+    width: 340px;
+    position: absolute;
+    background: aliceblue;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  nav ul li a,
+  nav label {
+    color: black;
+  }
+
+  nav label {
+    text-align: right;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  input:checked ~ nav {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 4em;
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #252525;
+}
+
+.container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 5em 2em 5em;
+}
+
+.header-text {
+  margin-top: 2em;
+}
+
+.title-text {
+  margin-top: 2em;
+}
+
+.subtitle-text {
+  margin-top: 2em;
+}
+
+.paragraph-text {
+  font-weight: 400;
   text-align: justify;
-  margin: 0 15px;
-  padding: 60px 20px;
-  text-align: center;
-  /* transform: translate(-50%, -50%); */
-}
-
-.dummy-text h1 {
-  font-size: 50px;
-  font-weight: 600;
-  margin: 5px 0;
-}
-
-.dummy-text h2 {
-  font-size: 40px;
-  font-weight: 500;
-  margin: 5px 0;
-}
-
-.dummy-text p {
-  font-size: 20px;
-  margin: 10px 0;
+  margin-top: 2em;
 }
