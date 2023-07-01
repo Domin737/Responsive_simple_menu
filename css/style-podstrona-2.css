@@ -100,3 +100,30 @@ nav ul li a {
 footer {
   background-color: #252525;
 }
+
+.container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 5em 2em 5em;
+}
+
+.header-text {
+  margin-top: 2em;
+}
+
+.title-text {
+  margin-top: 2em;
+}
+
+.subtitle-text {
+  margin-top: 2em;
+}
+
+.paragraph-text {
+  font-weight: 400;
+  text-align: justify;
+  margin-top: 2em;
+}
