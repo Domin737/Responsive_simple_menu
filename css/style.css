@@ -16,7 +16,7 @@ body {
   flex-direction: column;
 }
 
-header {
+.header-container {
   width: 100%;
   background: #252525;
   display: flex;
@@ -27,7 +27,7 @@ header {
   top: 0;
 }
 
-.nav-a {
+.logo-link {
   font-size: 1.5em;
   font-weight: 600;
   color: aliceblue;
@@ -37,7 +37,6 @@ header {
   gap: 10px;
 }
 
-.logo,
 nav ul li a,
 label {
   color: aliceblue;
