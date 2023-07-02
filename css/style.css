@@ -46,16 +46,16 @@ label {
   display: none;
 }
 
-nav ul {
+.list-container {
   display: flex;
   gap: 1rem;
 }
 
-nav ul li {
+.list-item {
   list-style: none;
 }
 
-nav ul li a {
+.navigation-link {
   text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ nav ul li a {
     display: block;
   }
 
-  nav {
+  .navigation-container {
     width: 21.25em;
     position: absolute;
     background: aliceblue;
@@ -78,25 +78,25 @@ nav ul li a {
   }
 
   .navigation-link,
-  nav label {
+  .navigation-label {
     color: #252525;
   }
 
-  nav label {
+  .navigation-label {
     text-align: right;
   }
 
-  nav ul {
+  .list-container {
     flex-direction: column;
   }
 
-  input:checked ~ nav {
+  input:checked ~ .navigation-container {
     visibility: visible;
     opacity: 1;
   }
 }
 
-footer {
+.footer-container {
   width: 100%;
   height: 4em;
   display: flex;
